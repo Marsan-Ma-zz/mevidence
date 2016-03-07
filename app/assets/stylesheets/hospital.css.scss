@@ -1,0 +1,24 @@
+.doctors_list, .doctors_filter {
+  padding: 0 40px;
+  .cat {
+    text-align: right;
+    padding: 10px 30px;
+    h4 {margin: 0;}
+  }
+  select {
+    margin: 10px;
+    font-size: 24px;
+  }
+}
+
+.doctor_chip {
+  padding: 10px;
+  border-bottom: 1px solid white;
+  h4 {margin: 0;}
+  p {margin: 5px 0;}
+}
+
+.cat_btn {
+  padding: 20px;
+  background-color: #eaeaea;
+}

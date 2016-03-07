@@ -1,0 +1,36 @@
+<div class='container'>
+  <div class='row'>
+    <% if params[:name] %>
+      <h3 class='txt_center'><%= "搜尋『#{params[:name]}』，得到#{@doctors.count}筆結果。" %></h3>
+    <% else %>
+      <h3 class='txt_center'>所有醫師一覽</h3>
+    <% end %>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='col-md-10 col-md-offset-1'>
+    <!-- filters -->
+    <div class='row doctors_filter'>
+      <div class='col-sm-4 hidden-xs cat'><h4>選擇地區</h4></div>
+      <div class='col-sm-8 col-xs-12 items'>
+        <%= select_tag("cities", options_for_select(@cities, (params[:city] || '所有地區')), :class => 'select_cat') %>
+      </div>
+
+      <div class='col-sm-4 hidden-xs cat'><h4>選擇專長</h4></div>
+      <div class='col-sm-8 col-xs-12 items'>
+        <%= select_tag("cats", options_for_select(@all_skills, (params[:name] || '所有專長')), :class => 'select_cat') %>
+      </div>
+    </div>
+
+    <!-- items -->
+    <div class='row doctors_list'>
+      <div class='col-sm-4 hidden-xs cat'><h4>醫師一覽</h4></div>
+      <div class='col-sm-8 col-xs-12 items'>
+        <%= render @doctors %>
+        <%= paginate @doctors %>
+      </div>
+    </div>
+
+  </div>
+</div>

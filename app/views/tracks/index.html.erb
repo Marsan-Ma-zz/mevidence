@@ -1,0 +1,16 @@
+<% ['search', 'doctor', 'hospital'].each do |k| %>
+  <table border="1">
+    <tr><td class='txt_center' colspan="2"><b><%= k.capitalize %></b></td></tr>
+    <tr>
+      <th class="col_300">key</th>
+      <th class="col_150">count</th>
+    </tr>
+    <% @tracks[k].each do |t| %>
+      <tr>
+        <td><%= t.desc %></td>
+        <td><%= t.count %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="txt_center"><%= paginate @tracks[k] %></div>
+<% end %>

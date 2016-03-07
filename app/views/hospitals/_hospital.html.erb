@@ -1,0 +1,19 @@
+<div class="doctor_chip">
+  <h4><%= link_to(hospital.name, hospital_path(hospital.name), :class => 'txt_black') %></h4>
+  <p>
+    <%= link_to(hospital.city, hospitals_path(:city => hospital.city), :class => 'txt_black') %> /
+    <%= hospital.level %>
+  </p>
+  <p>
+    地址：
+    <%= hospital.address %> 
+    <%= link_to('(地圖)', "https://www.google.com.tw/maps/place/#{hospital.address}", :target => '_blank') %>
+  </p>
+  <p>電話：<%= hospital.phone %></p>
+  <p>
+    科別：
+    <% hospital.categories.each do |c| %>
+      <%= link_to(c, hospitals_path(:cat => c), :class => 'txt_black') %>
+    <% end %>
+  </p>
+</div>

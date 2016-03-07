@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head prefix="og: http://ogp.me/ns#">
+    <%= render "layouts/head_meta" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Mevidence" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mevidence" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main" class='bg_grey'>
+       <%= render 'layouts/messages' %>
+       <div class="row slogan">
+         <%= image_tag("slogan_0.png", :id => "home_slogan") %>
+       </div>
+       <%= yield %>
+    </main>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= render "layouts/analytics" if Rails.env.production? %>
+  </body>
+</html>

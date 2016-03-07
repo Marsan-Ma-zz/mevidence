@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<meta name="application-name" content=<%= Setting.app_name %> />
+
+<!-- meta-tags for SEO -->
+<%= canonical_tag %>
+<%= display_meta_tags :site => Setting.app_name %>
+
+<!-- tell mobile device no need to scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+<!-- basics -->
+<%= yield(:head) %>

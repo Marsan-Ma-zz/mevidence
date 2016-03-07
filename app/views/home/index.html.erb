@@ -1,0 +1,13 @@
+
+<div id='home_container' class='row'>
+  <div class='triangle_down'></div>
+  <div id="search_layer" class='txt-center'>
+    <%= form_tag(doctors_path, method: :get, :id => "big_search") do %>
+      <%= text_field_tag :name, "", :placeholder => "搜尋醫師姓名、科別或症狀", :required => "required" %>
+      <button type="submit"></button>
+    <% end %>
+  </div>
+  <div class="slogan">
+    <%= image_tag("logo.png", :id => "home_logo") %>
+  </div>
+</div>

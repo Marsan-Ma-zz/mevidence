@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.bg_grey {
+  background-color: #eaeaea;
+}
+.bg_deepgrey {
+  background-color: #dbdbdb;
+}
+
+.txt_black {
+  color: black;
+}
+.txt_center {
+  text-align: center;
+}
+
+table {
+  margin: 40px auto;
+  table-layout: fixed;
+  word-wrap: break-word; 
+  word-break: break-all;
+//   // text-align: justify;
+//   // text-justify: inter-ideograph;
+  .col_100 {width: 100px;}
+  .col_150 {width: 150px;}
+  .col_200 {width: 200px;}
+  .col_250 {width: 250px;}
+  .col_300 {width: 300px;}
+}
+
+.tbl_header {
+  background-color: #ccc;
+  h4 {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+// table td {
+//   overflow: hidden;
+//   // display: inline-block;
+//   white-space: nowrap;
+// }
+
+@media (max-width:500px) {
+  main { 
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .doctors_list, .doctors_filter { 
+    padding: 0; 
+  }
+  .col-md-10 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .col-md-4.cat {
+    display: none;
+  }
+}

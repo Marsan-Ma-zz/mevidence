@@ -1,0 +1,23 @@
+defaults: &defaults
+  app_name: "mevidence"
+  domain: "127.0.0.1:3000"
+  domain_name: 'mevidence.life'
+  secret_key_base: 'ab2fa007126d1a0b7a3b9487b5e35a910221b421e4f327c47127ef6651edef949650dc55b55f7be37d8c3594c61462b402b082aa9b396f8216bae59b67b8fbba'
+  disqus_name: 'mevidence'
+  admin_emails:
+    - "marsan@gmail.com"
+  all_cats: ['精神科', '神經科', '腫瘤科', '泌尿科', '風濕免疫科', '骨科', '整形外科']
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  domain: "mevidence.life"
+  domain_name: 'mevidence.life'
+  secret_key_base: 'c1caea6a9f532271726bf207fe7055e3ed66da9a6cf57d41e726d0236e28eae10ef00387724fba2cb36e3c88b8d84f9c5d4dca48fe43a11d3a393d740ab5eb7e'
+  google_analytics_key: 'UA-32764178-9'
+

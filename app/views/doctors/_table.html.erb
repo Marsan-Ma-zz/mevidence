@@ -1,0 +1,22 @@
+<table border="1">
+  <tr class='tbl_header'><td colspan="4"><h4 class='txt_center'>醫師一覽</h4></td></tr>
+  <tr>
+    <th class="col_300">醫院</th>
+    <th class="col_150">科別</th>
+    <th class="col_100">醫師</th>
+    <th>專長</th>
+  </tr>
+  <% doctors.each do |d| %>
+    <tr>
+      <td><%= link_to(d.hospital, hospital_path(:id => d.hospital)) %></td>
+      <td><%= link_to(d.category, doctors_path(:name => d.category)) %></td>
+      <td><%= link_to(d.name, doctor_path(d.slug), :target => '_blank') %></td>
+      <td>
+        <% d.skills.compact.select{|s| s =~ /\p{Han}/}.each do |c| %>
+          <%= link_to(c, doctors_path(:name => c)) %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<div class="txt_center"><%= paginate doctors %></div>

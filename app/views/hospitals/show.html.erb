@@ -1,0 +1,31 @@
+<div class='container'>
+  <div class='col-sm-10 col-sm-offset-1'>
+    <!-- brand -->
+    <div class='briefing row'>
+      <a class='back_home' href="/">回首頁</a>
+      <div class='name col-sm-5'>
+        <h3><%= @hospital.name %></h3>
+      </div>
+      <div class='desc col-sm-7'>
+        <p>級別：<%= @hospital.level %></p>
+        <p>地址：<%= @hospital.address %> <%= link_to('(地圖)', "https://www.google.com.tw/maps/place/#{@hospital.address}", :target => '_blank') %></p>
+        <p>電話：<%= @hospital.phone %></p>
+      </div>
+    </div>
+
+    <!-- filters -->
+    <div class='row doctors_filter'>
+      <div class='col-sm-4 hidden-xs cat'><h4>選擇醫師科別</h4></div>
+      <div class='col-sm-8 col-xs-12 items'>
+        <%= select_tag("cats", options_for_select(@categories, (params[:cat] || '所有科別')), :class => 'select_cat') %>
+      </div>
+    </div>
+
+    <!-- items -->
+    <div class='row doctors_list'>
+      <div class='col-sm-4 hidden-xs cat'><h4>醫師一覽</h4></div>
+      <div class='col-sm-8 col-xs-12 items'><%= render @doctors %></div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="doctor_chip">
+  <h4>
+    <%= link_to(doctor.name, doctor_path(doctor.slug), :class => 'txt_black') %>
+    <small><%= (doctor.edu_phd) %></small>
+  </h4>
+  <small>
+
+    <%= link_to(doctor.hospital, hospital_path(doctor.hospital), :class => 'txt_black') %> 
+    <%= doctor.category %>
+  </small>
+  <p><%= doctor.skills.join(' ') %></p>
+</div>

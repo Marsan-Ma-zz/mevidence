@@ -1,0 +1,58 @@
+@import "base";
+
+#big_search_wrap {
+  text-align: center;
+}
+
+$bsw: 80px;
+#big_search {
+  position: relative;
+  top: 80px;
+  margin: 0 auto;
+  width: 60%;
+  border: 2px solid $word;
+  background-color: $white;
+  @include border-radius(10px);
+  input[type="text"], button {
+    height: $bsw;
+    background-color: $white;
+    border: none;
+    &:focus {outline: 0;}
+  }
+  input[type="text"] {
+    color: $word;
+    width: 350px;
+    font-size: $bsw/3;
+    margin-left: $bsw/2;
+  }
+  button {
+    background-image: url(image-path('search_b.png'));
+    background-position: $bsw*0.05 $bsw*0.05;
+    background-size: $bsw*0.6;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    float: right;
+    margin: 10px 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  #big_search {
+    top: 40px;
+    width: 360px;
+    input[type="text"] {
+      width: 300px;
+      height: 50px;
+      font-size: 20px;
+      margin-left: 15px;
+    }
+    button {
+      background-position: $bsw*0.025 $bsw*0.025;
+      background-size: $bsw*0.3;
+      width: 30px;
+      height: 30px;
+      margin: 12px 0;
+    }
+  } 
+}

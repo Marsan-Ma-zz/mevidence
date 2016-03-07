@@ -1,0 +1,38 @@
+.briefing {
+  padding: 60px 40px;
+  background-color: #dbdbdb;
+  position: relative;
+  .name h3 {
+    font-size: 32px;
+    text-align: right;
+    padding-right: 20px;
+  }
+  .desc {
+    border-left: 1px solid #fff;
+    p {
+      margin: 0 0 2px;
+    } 
+  }
+  .back_home {
+    position: absolute;
+    top: -28px;
+    left: 10px;
+    font-size: 18px;
+    opacity: 0.8;
+    font-weight: bold;
+  }
+}
+
+.comments {
+  padding: 40px;
+}
+
+
+@media (max-width:768px) {
+  .briefing {
+    .name h3 {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+}

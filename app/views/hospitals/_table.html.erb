@@ -1,0 +1,26 @@
+<table border="1">
+  <tr class='tbl_header'><td colspan="6"><h4>醫院一覽</h4></td></tr>
+  <tr>
+    <th class="col_100">城市</th>
+    <th class="col_100">級別</th>
+    <th class="col_200">院名</th>
+    <th>地址</th>
+    <th class="col_100">電話</th>
+    <th class="col_300">科別</th>
+  </tr>
+  <% hospitals.each do |h| %>
+    <tr>
+      <td><%= link_to(h.city, hospitals_path(:city => h.city)) %></td>
+      <td><%= h.level %></td>
+      <td><%= link_to(h.name, hospital_path(:id => h.name)) %></td>
+      <td><%= link_to(h.address, "https://www.google.com.tw/maps/place/#{h.address}", :target => '_blank') %></td>
+      <td><%= h.phone %></td>
+      <td>
+        <% h.categories.each do |c| %>
+          <%= link_to(c, hospitals_path(:cat => c)) %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<div class="txt_center"><%= paginate hospitals %></div>
